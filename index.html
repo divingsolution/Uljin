@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>울진 당일 보트다이빙 투어 | 다이빙솔루션</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Noto Sans KR",sans-serif;
+  background:#f6fbff;
+  color:#102a3a;
+  line-height:1.7;
+  word-break:keep-all;
+}
+a{text-decoration:none;color:inherit}
+section{padding:110px 22px}
+.container{max-width:1120px;margin:0 auto}
+
+.floating{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:999;
+  background:#0077c8;
+  color:#fff;
+  padding:15px 24px;
+  border-radius:999px;
+  font-weight:900;
+  box-shadow:0 18px 45px rgba(0,119,200,.35);
+}
+
+.hero{
+  position:relative;
+  min-height:100vh;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  background:#00131f;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(rgba(0,35,55,.18),rgba(0,20,35,.76)),
+    url("https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=2200&q=85") center/cover no-repeat;
+  transform:scale(1.15);
+  animation:kenburnsZoomOut 14s ease-out forwards;
+}
+
+@keyframes kenburnsZoomOut{
+  from{transform:scale(1.15)}
+  to{transform:scale(1)}
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:1080px;
+  padding:32px;
+}
+
+.label{
+  display:inline-block;
+  padding:8px 18px;
+  border-radius:999px;
+  background:rgba(230,251,255,.9);
+  color:#0077c8;
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:.08em;
+  margin-bottom:22px;
+}
+
+h1{
+  font-size:clamp(54px,9vw,118px);
+  line-height:.88;
+  letter-spacing:-.08em;
+  margin-bottom:24px;
+  text-shadow:0 18px 50px rgba(0,0,0,.38);
+}
+
+.hero h2{
+  font-size:clamp(26px,5vw,58px);
+  margin-bottom:18px;
+  text-shadow:0 14px 40px rgba(0,0,0,.35);
+}
+
+.hero p{
+  font-size:20px;
+  color:rgba(255,255,255,.86);
+  margin-bottom:34px;
+}
+
+.btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.btn{
+  padding:15px 26px;
+  border-radius:999px;
+  font-weight:900;
+  transition:.25s;
+}
+.btn:hover{transform:translateY(-3px)}
+.primary{background:#0077c8;color:#fff;box-shadow:0 15px 32px rgba(0,119,200,.28)}
+.secondary{background:#fff;color:#006699;border:1px solid #c8edf6}
+
+.title{text-align:center;margin-bottom:54px}
+.title span{color:#0077c8;font-size:14px;font-weight:950;letter-spacing:.1em}
+.title h2{
+  font-size:clamp(34px,6vw,68px);
+  line-height:1.08;
+  letter-spacing:-.07em;
+  color:#07384b;
+  margin-top:12px;
+}
+.title p{
+  max-width:760px;
+  margin:18px auto 0;
+  color:#5c7480;
+  font-size:18px;
+}
+
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+
+.card{
+  background:#fff;
+  border:1px solid #def2f8;
+  border-radius:30px;
+  padding:30px;
+  box-shadow:0 22px 55px rgba(0,70,100,.08);
+}
+.card h3{font-size:24px;color:#07384b;margin-bottom:12px}
+.card p,.card li{color:#5b707a}
+.num{font-size:38px;color:#0077c8;font-weight:950;margin-bottom:14px}
+
+.photo-band{padding:0}
+.photos{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:18px;
+  max-width:1280px;
+  margin:0 auto;
+  padding:22px;
+}
+.photo{
+  min-height:420px;
+  border-radius:36px;
+  background:center/cover no-repeat;
+  box-shadow:0 25px 70px rgba(0,70,100,.13);
+}
+.photo.big{
+  background-image:url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85");
+}
+.photo.small{
+  background-image:url("https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=1200&q=85");
+}
+
+.schedule{
+  background:
+    linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.62)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=85") center/cover no-repeat;
+  color:#fff;
+}
+.schedule .title h2,.schedule .title p{color:#fff}
+
+.timeline{position:relative;max-width:920px;margin:0 auto}
+.timeline:before{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:120px;
+  width:2px;
+  background:rgba(255,255,255,.25);
+}
+.time-item{
+  display:grid;
+  grid-template-columns:160px 1fr;
+  gap:34px;
+  align-items:flex-start;
+  margin-bottom:36px;
+}
+.time{
+  position:relative;
+  font-size:30px;
+  font-weight:950;
+  color:#8be4ff;
+  text-align:right;
+}
+.time:after{
+  content:"";
+  position:absolute;
+  right:-46px;
+  top:10px;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#8be4ff;
+}
+.time-content h3{
+  font-size:28px;
+  margin-bottom:8px;
+}
+.time-content p{
+  color:rgba(255,255,255,.78);
+  font-size:19px;
+}
+
+.price-box{
+  max-width:860px;
+  margin:0 auto;
+  text-align:center;
+  background:#fff;
+  border:1px solid #def2f8;
+  border-radius:42px;
+  padding:58px 26px;
+  box-shadow:0 35px 90px rgba(0,70,100,.13);
+}
+.money{
+  font-size:clamp(58px,9vw,104px);
+  font-weight:950;
+  letter-spacing:-.08em;
+  color:#0077c8;
+  line-height:1;
+  margin:18px 0;
+}
+
+ul{list-style:none;display:grid;gap:13px}
+li{
+  padding:14px 16px;
+  border-radius:16px;
+  background:#f1fbfe;
+  font-weight:750;
+}
+
+.check{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  border-bottom:1px solid #e4f3f7;
+  padding:16px 0;
+}
+.check:last-child{border-bottom:0}
+.check b{color:#07384b}
+.ok{color:#0077c8;font-weight:950}
+.no{color:#a0aeb5;font-weight:950}
+
+.notice-list{
+  display:grid;
+  gap:14px;
+  max-width:880px;
+  margin:0 auto;
+}
+.notice-row{
+  display:grid;
+  grid-template-columns:200px 1fr;
+  background:#fff;
+  border:1px solid #dff3f8;
+  border-radius:22px;
+  padding:18px 22px;
+}
+.notice-row b{color:#0077c8}
+
+.final{
+  min-height:72vh;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  background:
+    linear-gradient(rgba(255,255,255,.22),rgba(246,251,255,.95)),
+    url("https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=2200&q=85") center/cover no-repeat;
+}
+.final h2{
+  font-size:clamp(42px,7vw,82px);
+  line-height:1;
+  letter-spacing:-.08em;
+  color:#05374b;
+  margin-bottom:24px;
+}
+.final h2 strong{color:#0077c8}
+.final p{font-size:20px;color:#49626e;margin-bottom:32px}
+
+footer{
+  text-align:center;
+  padding:38px 22px;
+  background:#fff;
+  color:#789;
+  border-top:1px solid #e3f2f6;
+}
+
+.reveal {
+  opacity:0;
+  transform:translateY(45px);
+  filter:blur(8px);
+  transition:opacity .9s ease, transform .9s ease, filter .9s ease;
+}
+.reveal.show {
+  opacity:1;
+  transform:translateY(0);
+  filter:blur(0);
+}
+.reveal.fade-out {
+  opacity:0;
+  transform:translateY(-35px);
+  filter:blur(8px);
+}
+
+@media(max-width:900px){
+  .grid4,.grid3{grid-template-columns:1fr 1fr}
+  .two,.photos{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+  section{padding:78px 18px}
+  .grid4,.grid3{grid-template-columns:1fr}
+  .timeline:before{left:28px}
+  .time-item{grid-template-columns:58px 1fr;gap:18px}
+  .time{text-align:left;font-size:22px}
+  .time:after{left:20px;right:auto;top:38px}
+  .notice-row{grid-template-columns:1fr}
+  .floating{left:18px;right:18px;text-align:center}
+  .photo,.photo.small{min-height:300px}
+}
+</style>
+</head>
+
+<body>
+
+<a class="floating" href="https://pf.kakao.com/_sxaxmfK/chat" target="_blank">
+💬 카카오톡 상담
+</a>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+
+  <div class="hero-content reveal">
+    <div class="label">DIVING SOLUTION DAY TOUR</div>
+    <h1>ULJIN<br>DIVING TOUR</h1>
+    <h2>11일 · 12일 당일 보트다이빙</h2>
+    <p>
+      동해의 깊고 푸른 바다,<br>
+      울진에서 즐기는 당일 2회 보트다이빙 투어.
+    </p>
+
+    <div class="btns">
+      <a href="#schedule" class="btn primary">일정 보기</a>
+      <a href="#apply" class="btn secondary">참여 문의</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="title reveal">
+      <span>TOUR POINT</span>
+      <h2>하루면 충분합니다.<br>동해 바다를 진하게 만나는 일정</h2>
+      <p>
+        울진은 왕돌초, 거북초 등 다이버들이 찾는 포인트가 있는 동해 대표 다이빙 지역입니다.
+        이번 투어는 당일 일정 안에서 2회 보트다이빙을 집중적으로 즐기는 구성입니다.
+      </p>
+    </div>
+
+    <div class="grid4">
+      <div class="card reveal">
+        <div class="num">01</div>
+        <h3>당일 투어</h3>
+        <p>11일과 12일 각각 당일 일정으로 진행됩니다.</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="num">02</div>
+        <h3>2회 보트다이빙</h3>
+        <p>오전 출항 후 2회 다이빙을 진행합니다.</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="num">03</div>
+        <h3>보험료 포함</h3>
+        <p>참가비에는 2회 보트다이빙과 보험료가 포함됩니다.</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="num">04</div>
+        <h3>추가 진행 가능</h3>
+        <p>추가 다이빙 및 교육은 사전 협의 후 진행 가능합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="photo-band">
+  <div class="photos">
+    <div class="photo big reveal"></div>
+    <div class="photo small reveal"></div>
+  </div>
+</section>
+
+<section class="schedule" id="schedule">
+  <div class="container">
+    <div class="title reveal">
+      <span>DAY SCHEDULE</span>
+      <h2>당일 세부 일정</h2>
+      <p>11일 · 12일 각각 동일한 당일 일정으로 진행됩니다.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="time-item reveal">
+        <div class="time">08:00</div>
+        <div class="time-content">
+          <h3>현장 도착</h3>
+          <p>장비 준비, 참가자 확인, 브리핑을 진행합니다.</p>
+        </div>
+      </div>
+
+      <div class="time-item reveal">
+        <div class="time">09:00</div>
+        <div class="time-content">
+          <h3>1차 출항 및 보트다이빙</h3>
+          <p>해양 상황에 맞춰 안전 브리핑 후 첫 번째 다이빙을 진행합니다.</p>
+        </div>
+      </div>
+
+      <div class="time-item reveal">
+        <div class="time">10:30</div>
+        <div class="time-content">
+          <h3>2번째 다이빙</h3>
+          <p>수면휴식 후 두 번째 보트다이빙을 진행합니다.</p>
+        </div>
+      </div>
+
+      <div class="time-item reveal">
+        <div class="time">12:00</div>
+        <div class="time-content">
+          <h3>장비 정리 · 로그북 작성 · 식사</h3>
+          <p>다이빙 종료 후 장비를 정리하고 로그북 작성 및 식사 시간을 가집니다.</p>
+        </div>
+      </div>
+
+      <div class="time-item reveal">
+        <div class="time">14:00</div>
+        <div class="time-content">
+          <h3>해산</h3>
+          <p>당일 투어를 마무리합니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="title reveal">
+      <span>PRICE</span>
+      <h2>참가비 안내</h2>
+    </div>
+
+    <div class="price-box reveal">
+      <div class="label">1인 기준</div>
+      <div class="money">150,000원</div>
+      <p>2회 보트다이빙 + 보험료 포함</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="title reveal">
+      <span>INCLUDED / NOT INCLUDED</span>
+      <h2>포함 · 불포함 사항</h2>
+    </div>
+
+    <div class="two">
+      <div class="card reveal">
+        <h3>포함사항</h3>
+        <div class="check"><b>2회 보트다이빙</b><span class="ok">포함</span></div>
+        <div class="check"><b>보험료</b><span class="ok">포함</span></div>
+      </div>
+
+      <div class="card reveal">
+        <h3>불포함사항</h3>
+        <div class="check"><b>장비 대여료</b><span class="no">불포함</span></div>
+        <div class="check"><b>교통비</b><span class="no">불포함</span></div>
+        <div class="check"><b>숙박</b><span class="no">불포함</span></div>
+        <div class="check"><b>식사</b><span class="no">불포함</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="title reveal">
+      <span>NOTICE</span>
+      <h2>기타 안내사항</h2>
+    </div>
+
+    <div class="notice-list">
+      <div class="notice-row reveal">
+        <b>센터 출발 교통비</b>
+        <span>다이빙솔루션 센터에서 함께 출발할 경우 왕복 교통비 20,000원이 추가됩니다.</span>
+      </div>
+
+      <div class="notice-row reveal">
+        <b>추가 다이빙</b>
+        <span>추가 다이빙은 현장 및 해양 상황에 따라 가능 여부가 달라질 수 있으며, 사전 협의가 필요합니다.</span>
+      </div>
+
+      <div class="notice-row reveal">
+        <b>교육 진행</b>
+        <span>스페셜티, 체크다이빙, 스킬업 등 교육이 필요한 경우 사전에 별도 문의 부탁드립니다.</span>
+      </div>
+
+      <div class="notice-row reveal">
+        <b>해양 상황</b>
+        <span>기상 및 해양 상황에 따라 출항 시간, 포인트, 다이빙 횟수는 안전을 기준으로 조정될 수 있습니다.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="title reveal">
+      <span>WHY DIVING SOLUTION</span>
+      <h2>왜 다이빙솔루션인가?</h2>
+      <p>당일 투어일수록 운영이 중요합니다. 짧은 시간 안에서도 안전하고 편안하게 다이빙에 집중할 수 있도록 준비합니다.</p>
+    </div>
+
+    <div class="grid3">
+      <div class="card reveal">
+        <div class="num">01</div>
+        <h3>안전 중심 운영</h3>
+        <p>출항, 브리핑, 버디 체크, 로그북 작성까지 안전 기준을 우선합니다.</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="num">02</div>
+        <h3>소규모 진행</h3>
+        <p>참가자 한 분 한 분이 편하게 다이빙할 수 있도록 무리한 진행을 하지 않습니다.</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="num">03</div>
+        <h3>추가 교육 가능</h3>
+        <p>스킬업, 체크다이빙, 추가 다이빙 등은 사전 상담 후 맞춤 진행이 가능합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="apply">
+  <div class="container reveal">
+    <h2><strong>ULJIN</strong><br>DAY DIVING</h2>
+    <p>
+      하루를 비워도 충분히 좋은 바다를 만날 수 있습니다.<br>
+      울진 당일 보트다이빙, 다이빙솔루션과 함께하세요.
+    </p>
+
+    <div class="btns">
+      <a href="https://pf.kakao.com/_sxaxmfK/chat" target="_blank" class="btn primary">카카오톡 1:1 문의</a>
+      <a href="tel:010-9879-6365" class="btn secondary">010-9879-6365 전화문의</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Diving Solution · Uljin Day Boat Diving Tour
+</footer>
+
+<script>
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      entry.target.classList.remove('fade-out');
+    } else {
+      if (entry.boundingClientRect.top < 0) {
+        entry.target.classList.remove('show');
+        entry.target.classList.add('fade-out');
+      } else {
+        entry.target.classList.remove('show');
+        entry.target.classList.remove('fade-out');
+      }
+    }
+  });
+}, {
+  threshold:0.18
+});
+
+revealElements.forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
+</html>
